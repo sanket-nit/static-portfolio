@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+main {
+  text-align: center;
+}
+
+.profile-img img {
+  width: 150px;
+  position: absolute;
+}
+
+/* NAVIGATION */
+
+header {
+  background-color: white;
+}
+
+#main-nav {
+  height: 70px;
+  text-align: center;
+  margin: auto;
+  margin-right: 4rem;
+  padding-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  /* display: none; */
+}
+
+#main-nav a {
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 25px;
+  color: grey;
+}
+
+#main-nav a:hover {
+  color: royalblue;
+}
+
+/* Mobile Nav */
+
+#mobile-nav {
+  /* height: 70px; */
+  position: relative;
+}
+#nav-btn {
+  display: flex;
+  align-items: center;
+  margin: 1rem 1.5rem;
+  justify-content: flex-end;
+}
+
+#nav-btn i {
+  color: gray;
+  font-size: 30px;
+  display: none;
+}
+
+.nav-items-container {
+  display: none;
+  transition: opacity 200ms, display 200ms;
+  height: 250px;
+}
+
+.nav-items-container .items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-items-container > i,
+a {
+  font-size: 20px;
+  text-decoration: none;
+  margin: 10px 0;
+  color: grey;
+}
+
+.nav-items-container a:hover {
+  color: royalblue;
+}
+
+.show {
+  display: revert;
+  opacity: 1;
+  z-index: 1000;
+}
+
+/*END NAVIGATION */
+
+/* START MAIN */
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 1000;
+}
+
+#about {
+  /* margin-top: 100px; */
+  position: relative;
+  height: calc(90vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about p {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.about-container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+#wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+#master,
+#frontend,
+#tech,
+#wizard {
+  display: inline-block;
+}
+
+/* END MAIN */
+
+/* ANIMATIONS */
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* MEDIA QUERIES*/
+
+@media screen and (max-width: 900px) {
+  .about-container {
+    width: 95%;
+  }
+
+  #main-nav {
+    display: none;
+  }
+
+  #mobile-nav {
+  }
+
+  #nav-btn i {
+    display: revert;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #about {
+    margin-top: -15px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 1000;
+  }
+  #about p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 30px;
+  }
+  .profile-img img {
+    width: 100px;
+    position: absolute;
+  }
+}
